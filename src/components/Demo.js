@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Timer from './Timer.js'
 
-class App extends Component {
+class Demo extends Component {
   render() {
     return (
       <div className="App">
@@ -18,14 +17,12 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            demo
           </a>
-          <Timer/>
         </header>
-       
       </div>
     );
   }
 }
 
-export default App;
+export default Demo;
