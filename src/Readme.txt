@@ -6,9 +6,10 @@ https://segmentfault.com/a/1190000012921279#articleHeader6
     React 不是一个MVC框架，仅仅是视图（V）层的库。
 
     首先 熟悉 箭头函数， 类， 模板字符串， let， 和 const 声明。
+    * 由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号，否则会报错。
 
 React项目中定义组件的方式有两种：
-    1、函数式。
+    1、函数式
     function Welcome(props) {
       return <h1>Hello, {props.name}</h1>;
     }
@@ -18,7 +19,7 @@ React项目中定义组件的方式有两种：
         return <h1>Hello, {this.props.name}</h1>;
       }
     }
-
+    
 上面两个组件在React中是相同的。
 
 为什么使用类来定义一个组件？
@@ -35,8 +36,15 @@ React项目中定义组件的方式有两种：
     4、在 render() 方法中，使用 this.props 替换 props
     5、删除剩余的空函数声明
 
-    class Demo extends React.Component{
-      
+    class Demo extends React.Component {
+      constructor(props){
+        super(props){
+
+        }
+      }
+      render(){
+        
+      }
     }
 
 3、constructor 构造器
@@ -44,10 +52,11 @@ React项目中定义组件的方式有两种：
     添加一个类构造函数来初始化状态 this.state
     constructor方法是一个特殊的方法，其用于创建和初始化使用class创建的一个对象。
     一个类只能拥有一个名为 “constructor”的特殊方法。
+    super(props) //调用父类的构造函数，固定写法
 
 4、生命周期钩子
-    1、componentDidMount
-    当组件输出到 DOM 后会执行 componentDidMount() 钩子
+    1、componentDidMount  当组件输出到 DOM 后会执行 componentDidMount() 钩子
+    
     2、componentWillUnmount
 
 5、React 的基本使用
@@ -96,17 +105,21 @@ class Welcome extends React.Component {
 8、组件生命周期函数总览
 组件的生命周期包含三个阶段：创建阶段（Mounting）、运行和交互阶段（Updating）、卸载阶段（Unmounting）。
 Mounting：
+
 constructor() 
 作用：1 获取props 2 初始化state
 说明：通过 constructor() 的参数props获取
+
 componentWillMount() 
 说明：组件被挂载到页面之前调用，其在render()之前被调用，因此在这方法里同步地设置状态将不会触发重渲染。
 注意：无法获取页面中的DOM对象，可以调用 setState() 方法来改变状态值。
 用途：发送ajax请求获取数据
+
 render() 
 作用：渲染组件到页面中，无法获取页面中的DOM对象
 注意：不要在render方法中调用 setState() 方法，否则会递归渲染
 原因说明：状态改变会重新调用render()，render()又重新改变状态
+
 componentDidMount() 
   1 、组件已经挂载到页面中
   2 、可以进行DOM操作，比如：获取到组件内部的DOM对象
@@ -128,3 +141,5 @@ this.state.comment = 'Hello'; // Wrong  此代码不会重新渲染组件
 this.setState({comment: 'Hello'}); 构造函数是唯一能够初始化 this.state 的地方。
   2、状态更新可能是异步的
   3、状态更新合并
+
+  记住React是禁止直接操作state的

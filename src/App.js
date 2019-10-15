@@ -1,31 +1,16 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Timer from './Timer.js'
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <Timer/>
-        </header>
-       
-      </div>
-    );
-  }
+import React,{Component} from 'react'
+// 可以分开写：
+// import React from 'react'
+// const Component = React.Component
+class App extends Component{
+    render(){
+        return (
+            <ul className="my-list">
+                <li>{ true ?'JSPang.com':'技术胖'}</li>
+                <li>I love React</li>
+            </ul>
+        )
+    }
 }
 
 export default App;
