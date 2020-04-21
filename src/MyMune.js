@@ -15,13 +15,12 @@ import React,{Fragment,Component}from 'react'
 // }
 
 // 解决key  问题：
-//
 class Compont extends Component {
     constructor(props){
         super(props)
         this.state={
             inputValue:'' , // input中的值
-            list:['基础按摩','精油推背'] ,   //服务列表
+            list:['服务1','服务2'] ,   //服务列表
             inp : ''
         }
 
@@ -61,6 +60,7 @@ class Compont extends Component {
     // 添加
     addList(){
         console.log(this,'指针')
+        
         this.setState({
             list:[...this.state.list,this.state.inp]
         })

@@ -1,6 +1,6 @@
 https://segmentfault.com/a/1190000012921279#articleHeader6
 
-1、什么是react？
+### 1、什么是react？
     React 是一个采用声明式，高效而且灵活的用来构建用户界面的框架。
     用来构建UI的JavaScript 库。
     React 不是一个MVC框架，仅仅是视图（V）层的库。
@@ -28,8 +28,8 @@ React项目中定义组件的方式有两种：
 注：组件名称必须以大写字母开头。
 例如，<div /> 表示一个DOM标签，但 <Welcome /> 表示一个组件，并且在使用该组件时你必须定义或引入它。
 
-2、将函数转换为类
-    你可以通过5个步骤将函数组件转换为类
+### 2、将函数转换为类
+    你可以通过5个步骤将函数组件转换为类：
     1、创建一个名称扩展为 React.Component 的ES6 类
     2、创建一个叫做render()的空方法
     3、将函数体移动到 render() 方法中
@@ -47,19 +47,14 @@ React项目中定义组件的方式有两种：
       }
     }
 
-3、constructor 构造器
+### 3、constructor 构造器
     构造器的作用：
     添加一个类构造函数来初始化状态 this.state
     constructor方法是一个特殊的方法，其用于创建和初始化使用class创建的一个对象。
     一个类只能拥有一个名为 “constructor”的特殊方法。
     super(props) //调用父类的构造函数，固定写法
 
-4、生命周期钩子
-    1、componentDidMount  当组件输出到 DOM 后会执行 componentDidMount() 钩子
-    
-    2、componentWillUnmount
-
-5、React 的基本使用
+### 4、React 的基本使用
   // 1. 导入 react
   import React from 'react'
   import ReactDOM from 'react-dom'
@@ -67,21 +62,21 @@ React项目中定义组件的方式有两种：
   // 2. 创建 虚拟DOM
   // 参数1：元素名称  参数2：元素属性对象(null表示无)  参数3：当前元素的子元素string||createElement() 的返回值
   const divVD = React.createElement('div', {
-    title: 'hello react'
+      title: 'hello react'
   }, 'Hello React！！！')
 
   // 3. 渲染
   // 参数1：虚拟dom对象  参数2：dom对象表示渲染到哪个元素内 参数3：回调函数
-  ReactDOM.render(divVD, document.getElementById('app')
+  ReactDOM.render(divVD, document.getElementById('app'))
 
-6、JSX的注意点
+### 5、JSX的注意点
   1、 如果在 JSX 中给元素添加类, 需要使用 className 代替 class
   类似：label 的 for属性，使用htmlFor代替
   2、在 JSX 中可以直接使用 JS代码，直接在 JSX 中通过 {} 中间写 JS代码即可
   3、在 JSX 中只能使用表达式，但是不能出现 语句！！！
   4、在 JSX 中注释语法：{/* 中间是注释的内容 */}
 
-7、React组件
+### 6、React组件
   React创建组件的2种方式：
   1、通过 JS函数 创建（无状态组件）
   2、通过 class 创建（有状态组件）
@@ -102,7 +97,7 @@ class Welcome extends React.Component {
   }
 }
 
-8、组件生命周期函数总览
+### 7、组件生命周期函数总览
 组件的生命周期包含三个阶段：创建阶段（Mounting）、运行和交互阶段（Updating）、卸载阶段（Unmounting）。
 Mounting：
 
@@ -120,7 +115,7 @@ render()
 注意：不要在render方法中调用 setState() 方法，否则会递归渲染
 原因说明：状态改变会重新调用render()，render()又重新改变状态
 
-componentDidMount() 
+componentDidMount() 当组件输出到 DOM 后会执行 componentDidMount() 钩子
   1 、组件已经挂载到页面中
   2 、可以进行DOM操作，比如：获取到组件内部的DOM对象
   3 、可以发送请求获取数据
@@ -135,7 +130,7 @@ componentDidUpdate()
 Unmounting
 componentWillUnmount()
 
-9、正确的使用状态
+### 8、正确的使用状态
   1、不要直接更新状态
 this.state.comment = 'Hello'; // Wrong  此代码不会重新渲染组件
 this.setState({comment: 'Hello'}); 构造函数是唯一能够初始化 this.state 的地方。
