@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eject": "0.0.4",
+    "element-react": "^1.4.34",
+    "element-theme-default": "^1.4.13",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-hot-loader": "^4.12.21",
     "react-router-dom": "^5.1.2",
     "react-scripts": "2.1.2"
   },
@@ -22,5 +26,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "proxy": "http://cms-test.vlightv.com",
+  "devDependencies": {
+    "react-app-rewired": "^2.1.6"
+  }
 }

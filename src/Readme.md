@@ -8,7 +8,7 @@ https://segmentfault.com/a/1190000012921279#articleHeader6
     首先 熟悉 箭头函数， 类， 模板字符串， let， 和 const 声明。
     * 由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号，否则会报错。
 
-React项目中定义组件的方式有两种：
+### React项目中定义组件的方式有两种：
     1、函数式
     function Welcome(props) {
       return <h1>Hello, {props.name}</h1>;
@@ -19,8 +19,13 @@ React项目中定义组件的方式有两种：
         return <h1>Hello, {this.props.name}</h1>;
       }
     }
-    
+    function Welcome (props) {
+      return <h1>Hello,{props.name}</h1>
+    }    
 上面两个组件在React中是相同的。
+函数式组件 和 class 组件的使用场景说明：
+1 如果一个组件仅仅是为了展示数据，那么此时就可以使用 函数组件
+2 如果一个组件中有一定业务逻辑，需要操作数据，那么就需要使用 class 创建组件，因为，此时需要使用 state
 
 为什么使用类来定义一个组件？
   使用类就允许我们使用其它特性，例如局部状态、生命周期钩子
