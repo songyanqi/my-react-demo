@@ -9,23 +9,37 @@ https://segmentfault.com/a/1190000012921279#articleHeader6
     * 由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号，否则会报错。
 
 ### React项目中定义组件的方式有两种：
-    1、函数式
+  ```Javascript
+// 1、函数式
     function Welcome(props) {
       return <h1>Hello, {props.name}</h1>;
     }
-    2、通过class类来声明定义一个组件
+// 2、通过class类来声明定义一个组件
     class Welcome extends React.Component {
       render() {
         return <h1>Hello, {this.props.name}</h1>;
       }
     }
-    function Welcome (props) {
-      return <h1>Hello,{props.name}</h1>
-    }    
+// 1、函数式
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>
+}
+// 2、通过class类来声明定义一个组件
+class Welcome extends React.Component {
+  render(){
+    return <h1>Hello,{this.props.name}</h1>
+  }
+}
+// 7 + 1 
+// 0.4 * 6 = 2.5 8-2.5 = 5.5
+// 余：23 + 5.5 = 28.5
+// 公积金 2.5 + 5.5 = 8
+// 28.5 + 8 = 36.5
+  ```
 上面两个组件在React中是相同的。
 函数式组件 和 class 组件的使用场景说明：
-1 如果一个组件仅仅是为了展示数据，那么此时就可以使用 函数组件
-2 如果一个组件中有一定业务逻辑，需要操作数据，那么就需要使用 class 创建组件，因为，此时需要使用 state
+1、如果一个组件仅仅是为了展示数据，那么此时就可以使用 函数组件
+2、如果一个组件中有一定业务逻辑，需要操作数据，那么就需要使用 class 创建组件，因为，此时需要使用 state
 
 为什么使用类来定义一个组件？
   使用类就允许我们使用其它特性，例如局部状态、生命周期钩子
@@ -40,7 +54,7 @@ https://segmentfault.com/a/1190000012921279#articleHeader6
     3、将函数体移动到 render() 方法中
     4、在 render() 方法中，使用 this.props 替换 props
     5、删除剩余的空函数声明
-
+  ```Javascript
     class Demo extends React.Component {
       constructor(props){
         super(props){
@@ -51,7 +65,7 @@ https://segmentfault.com/a/1190000012921279#articleHeader6
         
       }
     }
-
+  ```
 ### 3、constructor 构造器
     构造器的作用：
     添加一个类构造函数来初始化状态 this.state
@@ -91,7 +105,7 @@ function Welcome(props) {
   // 返回的 react元素中必须只有一个根元素
   return <div>hello, {props.name}</div>
 }
-
+```Javascript
 class Welcome extends React.Component {
   constructor(props) {
     super(props)
@@ -101,6 +115,7 @@ class Welcome extends React.Component {
     return <h1>Hello, {this.props.name}</h1>
   }
 }
+```
 
 ### 7、组件生命周期函数总览
 组件的生命周期包含三个阶段：创建阶段（Mounting）、运行和交互阶段（Updating）、卸载阶段（Unmounting）。
